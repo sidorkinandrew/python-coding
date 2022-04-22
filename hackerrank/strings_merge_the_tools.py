@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/merge-the-tools/problem?isFullScreen=true
+
 def merge_the_tools(astring, k):
     # your code goes here
     chunks = [astring[i:i+k] for i in range(0, len(astring), k)]
