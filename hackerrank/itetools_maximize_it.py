@@ -1,4 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/maximize-it/problem?isFullScreen=true
 
 from functools import reduce
 
