@@ -1,4 +1,5 @@
 import operator
+# https://www.hackerrank.com/challenges/decorators-2-name-directory/problem?isFullScreen=true
 
 def person_lister(f):
     def inner(people):
