@@ -10,9 +10,9 @@ def check_weirdness(anumber):
     is_odd = anumber % 2
     if is_odd:
         return "Weird"
-    elif 2<= n <= 5:
+    elif 2<= anumber <= 5:
         return "Not Weird"
-    elif 6<= n <= 20:
+    elif 6<= anumber <= 20:
         return "Weird"
     else:
         return "Not Weird"
