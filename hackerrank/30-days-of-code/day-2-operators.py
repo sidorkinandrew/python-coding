@@ -1,5 +1,5 @@
 #!/bin/python3
-
+# https://www.hackerrank.com/challenges/30-operators/problem?isFullScreen=true
 import math
 import os
 import random
