@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/30-hello-world/problem?isFullScreen=true
 # Read a full line of input from stdin and save it to our dynamically typed variable, input_string.
 input_string = input()
 
