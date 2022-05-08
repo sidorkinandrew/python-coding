@@ -4,7 +4,7 @@
 
 
 def mysum(*numbers):
-    output = 0
+    result = 0
     for number in numbers:
-        output += number
-    return output
+        result += number
+    return result
