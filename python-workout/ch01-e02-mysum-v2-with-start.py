@@ -3,6 +3,6 @@
 
 def mysum(numbers, start=0):
     result = start
-    for number in numbers:
-        result += number
+    for anumber in numbers:
+        result += anumber
     return result
