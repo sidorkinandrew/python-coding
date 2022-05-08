@@ -5,6 +5,6 @@
 
 def mysum(*numbers):
     result = 0
-    for number in numbers:
-        result += number
+    for anumber in numbers:
+        result += anumber
     return result
