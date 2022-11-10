@@ -36,7 +36,7 @@ user_choice = choice_to_int.get(user_choice, 99) if len(str(user_choice))>2 else
 if user_choice >= 3 or user_choice < 0: 
   print("You typed an invalid number/choice, you lose!") 
 else:
-    print(game_images[user_choice])
+  print(game_images[user_choice])
   computer_choice = random.randint(0, 2)
   print("Computer chose:")
   print(game_images[computer_choice])
