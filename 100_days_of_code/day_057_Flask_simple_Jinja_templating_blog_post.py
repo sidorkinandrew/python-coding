@@ -26,12 +26,16 @@ def get_all_posts():
 
 @app.route('/guess/<name>')
 def guess(name):
-    gender = requests.get(f'https://api.genderize.io?name={name}').json()
-    age = requests.get(f'https://api.agify.io?name={name}').json()
-    html_response = f"<h1> Hey {name.title()}!</h1>" \
-                    f"<h2> I think you are {gender['gender']}</h2>" \
-                    f"<h3> And maybe you are {age['age']} years old!</h3>"
-    return html_response
+    gender = requests.get(f'https://api.genderize.io?name={name}').json()['gender']
+    age = requests.get(f'https://api.agify.io?name={name}').json()['age']
+    return render_template("guess.html", person_name=name, gender=gender, age=age)
+
+
+@app.route("/blog/<num>")
+def get_blog(num):
+    blog_url = "https://api.npoint.io/c790b4d5cab58020d391"
+    all_posts = requests.get(blog_url).json()
+    return render_template('blog.html', posts=all_posts)
 
 
 @app.route("/post/<int:index>")
@@ -45,6 +49,54 @@ def show_post(index):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+"""
+
+### guess.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess</title>
+</head>
+<body>
+    <h1>Hey {{ person_name.title() }}</h1>
+    <h2>I think you are {{ gender }}</h2>
+    <h3>And maybe {{ age }} years old</h3>
+</body>
+</html>
+
+"""
+
+
+
+
+
+"""
+
+### blog.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    {% for blog_post in posts: %}
+        {% if blog_post["id"] == 2: %}
+        <h1>{{ blog_post["title"] }}</h1>
+        <h2>{{ blog_post["subtitle"] }}</h2>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
+"""
+
 
 """
 
